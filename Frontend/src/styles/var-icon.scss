@@ -1,0 +1,109 @@
+@mixin make-property($property, $value) {
+    @each $prefix in -webkit-, -moz-, -ms-, -o-, "" {
+      #{$prefix}#{$property}: $value;
+    }
+  }
+
+@mixin setIcon($icon-name, $icon-width, $icon-height, $icon-color, $icon-posX, $icon-posY, $icon-link) {
+  .#{$icon-name} {
+    width: $icon-width;
+    height: $icon-height;
+    @include make-property(mask-image, $icon-link);
+    @include make-property(mask-position, $icon-posX $icon-posY);
+    @include make-property(mask-repeat, no-repeat);
+    background-color: $icon-color !important;
+  }
+
+};
+
+// set icon mà không quan tâm đến màu
+@mixin setIconWithoutColor($icon-name, $icon-width, $icon-height, $icon-posX, $icon-posY, $icon-link) {
+  .#{$icon-name} {
+    width: $icon-width;
+    height: $icon-height;
+    @include make-property(mask-image, $icon-link);
+    @include make-property(mask-position, $icon-posX $icon-posY);
+    @include make-property(mask-repeat, no-repeat);
+  }
+
+};
+
+// set icon lấy màu mặc định
+@mixin setIconWithDefaultColor($icon-name, $icon-width, $icon-height, $icon-posX, $icon-posY, $icon-link) {
+  .#{$icon-name} {
+    width: $icon-width;
+    height: $icon-height;
+    background: $icon-link $icon-posX $icon-posY no-repeat;
+  }
+};
+
+//Bộ icon 1
+$link-icon1: url("../assets/icon/Icon.svg");
+
+//Hàng 1
+@include setIconWithDefaultColor('icon-home',24px,24px,0px,0px,$link-icon1);
+@include setIconWithDefaultColor('icon-user',24px,24px,-24px,0px,$link-icon1);
+@include setIconWithDefaultColor('icon-note',24px,24px,-48px,0px,$link-icon1);
+@include setIconWithDefaultColor('icon-dolar',24px,24px,-72px,0px,$link-icon1);
+@include setIconWithDefaultColor('icon-three-dot',24px,24px,-192px,0px,$link-icon1);
+@include setIconWithDefaultColor('icon-setting',24px,24px,-216px,0px,$link-icon1);
+@include setIconWithDefaultColor('icon-chocolate',24px,24px,-240px,0px,$link-icon1);
+@include setIconWithDefaultColor('icon-kebab',24px,24px,-264px,0px,$link-icon1);
+
+//Hàng 2
+@include setIconWithDefaultColor('icon-notify',24px,24px,0px,-24px,$link-icon1);
+@include setIcon('icon-notify-active',24px,24px,#2962FF,0px,-24px,$link-icon1);
+@include setIcon('icon-plus-white',24px,24px,#ffffff,-24px,-24px,$link-icon1);
+@include setIconWithDefaultColor('icon-search',24px,24px,-48px,-24px,$link-icon1);
+
+@include setIconWithDefaultColor('icon-filter',24px,24px,-216px,-24px,$link-icon1);
+//Hàng 3
+@include setIconWithDefaultColor('icon-back',24px,24px,-168px,-48px,$link-icon1);
+@include setIconWithDefaultColor('icon-edit',24px,24px,-192px,-48px,$link-icon1);
+
+@include setIconWithDefaultColor('icon-edit',24px,24px,-192px,-48px,$link-icon1);
+
+//Hàng 4
+@include setIconWithDefaultColor('icon-delete',24px,24px,-240px,-72px,$link-icon1);
+
+@include setIconWithDefaultColor('icon-list-dote',24px,24px,-48px,-72px,$link-icon1);
+
+//Hàng 5
+@include setIcon('icon-import',24px,24px,#2962FF,-24px,-96px,$link-icon1);
+@include setIcon('icon-export',24px,24px,#2962FF,0px,-96px,$link-icon1);
+//@include setIconWithDefaultColor('icon-export',24px,24px,-24px,-96px,$link-icon1);
+@include setIconWithDefaultColor('icon-eye-show',24px,24px,-216px,-96px,$link-icon1);
+
+//Hàng 7
+@include setIconWithDefaultColor('icon-list-block',24px,24px,-216px,-144px,$link-icon1);
+
+//Hàng 9
+@include setIconWithDefaultColor('icon-eye-hide',24px,24px,-48px,-192px,$link-icon1);
+
+//Hàng 16
+@include setIconWithDefaultColor('icon-dismissed',24px,24px,-264px,-376px,$link-icon1);
+@include setIconWithDefaultColor('icon-dispatch',24px,24px,-264px,-400px,$link-icon1);
+@include setIconWithDefaultColor('icon-appoint',24px,24px,-264px,-424px,$link-icon1);
+//hàng 20
+@include setIconWithDefaultColor('icon-home20',24px,24px,0px,-480px,$link-icon1);
+@include setIconWithDefaultColor('icon-user20',24px,24px,-24px,-480px,$link-icon1);
+@include setIconWithDefaultColor('icon-note20',24px,24px,-48px,-480px,$link-icon1);
+@include setIconWithDefaultColor('icon-users20',24px,24px,-96px,-480px,$link-icon1);
+@include setIconWithDefaultColor('icon-gift20',24px,24px,-120px,-480px,$link-icon1);
+@include setIconWithDefaultColor('icon-help20',24px,24px,-144px,-480px,$link-icon1);
+@include setIconWithDefaultColor('icon-setting20',24px,24px,-192px,-480px,$link-icon1);
+@include setIconWithDefaultColor('icon-next20',24px,24px,-240px,-480px,$link-icon1);
+@include setIconWithDefaultColor('icon-back20',24px,24px,-216px,-480px,$link-icon1);
+
+//Hàng 11
+@include setIconWithDefaultColor('icon-help',24px,24px,-24px,-240px,$link-icon1);
+@include setIconWithDefaultColor('icon-singout',24px,24px,-72px,-240px,$link-icon1);
+
+//icon to
+@include setIconWithDefaultColor('icon-user-big',48px,48px,-72px,-576px,$link-icon1);
+
+//Bộ icon 1
+$link-icon2: url("../assets/icon/Icon-2.svg");
+
+//Hàng 3
+@include setIconWithDefaultColor('icon-chocolate2',24px,24px,-192px,-48px,$link-icon2);

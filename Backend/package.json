@@ -1,0 +1,24 @@
+{
+  "name": "api_nodejs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "mysql": "^2.15.0",
+    "nodemon": "^1.19.4"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^5.0.1",
+    "express": "^4.18.1",
+    "node-static": "^0.7.11",
+    "util": "^0.10.3",
+    "xlsx": "^0.18.5"
+  }
+}
